@@ -1,0 +1,568 @@
+/* - TIPOGRAFIA - */
+
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: url(fonts/gotham-rounded-book.eot);
+    src: url(fonts/gotham-rounded-book.woff) format('woff'),
+         url(fonts/gotham-rounded-book.svg) format('svg'),
+         url(fonts/gotham-rounded-book.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@fontface{
+  font-family: 'Gotham Rounded';
+  src: url(fonts/gotham-rounded-medium.eot);
+  src: url(fonts/gotham-rounded-medium.woff) format('woff'),
+       url(fonts/gotham-rounded-medium.svg) format('svg'),
+       url(fonts/gotham-rounded-medium.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@fontface{
+  font-family: 'Gotham Rounded';
+  src: url(fonts/gotham-rounded-bold.eot);
+  src: url(fonts/gotham-rounded-bold.woff) format('woff'),
+       url(fonts/gotham-rounded-bold.svg) format('svg'),
+       url(fonts/gotham-rounded-bold.ttf) format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+p{
+  font-weight: normal;
+}
+
+h1, h5{
+  font-weight: bolder;
+}
+
+h2, h3{
+  font-weight: bold;
+}
+
+
+
+
+
+/* - GRID - */
+
+body{
+  font-family: "Gotham Rounded", Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-areas: "header header header header header"
+                       "slideshow slideshow slideshow slideshow slideshow"
+                       ". eventoinicial eventoinicial eventoinicial ."
+                       ". sidebar conteudo conteudo ."
+                       "footer footer footer footer footer";
+  grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+  column-gap: 40px;
+}
+
+
+
+
+
+/* - HEADER - */
+
+header{
+  background: #f2f2f2;
+  grid-area: header;
+  height: 90px;
+  z-index: 10;
+  box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.headermenu{
+  grid-area: 1 / 2 / 2 / 5;
+  z-index: 50;
+  padding: 0;
+  align-self: center;
+  z-index: 11;
+}
+
+.headerlogo{
+  float: left;
+  padding: 0 !important;
+}
+
+#logo{
+  height: 50px;
+}
+
+ul.navigation-menu .headerlogo li a:link, .navigation-menu .headerlogo li a:visited {
+  padding: 4px !important;
+}
+
+.headerlinks{
+  float: right;
+}
+
+ul.navigation-menu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.navigation-menu li {
+  float: left;
+}
+
+ul.navigation-menu li:hover {
+  background-color: #bfbfbf; /*Cor de hover dos itens */
+  border-radius: 25px;
+}
+
+ul.navigation-menu li a:link, .navigation-menu li a:visited {
+  display: block;
+  padding: 10px 20px 10px 20px;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0d0d0d; /*Cor do texto dos itens princiapis*/
+}
+
+ul.navigation-sub-menu {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10001;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  list-style-type: none;
+}
+
+ul.navigation-menu li:hover > ul.navigation-sub-menu {
+  visibility: visible;
+}
+
+ul.navigation-sub-menu li {
+  float: none;
+}
+
+ul.navigation-sub-menu li a:link, .navigation-sub-menu li a:visited {
+  display: block;
+  padding: 5px 20px 5px 20px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #0d0d0d; /*Cor do texto do submenu*/
+  text-shadow: 0px 0px;
+}
+
+.navigation-menu ul {
+  background: #d9d9d9; /*Cor do fundo do submenu*/
+  border-radius: 15px;
+  padding: 5px;
+  width: auto;
+}
+
+
+
+
+
+/* - SLIDESHOW - */
+
+.slideshow{
+  grid-area: slideshow;
+  height: 600px;
+  margin-bottom: 90px;
+}
+
+
+.CSSgal {
+	position: relative;
+	overflow: hidden;
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+	height: 100%;
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	height: 100%;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       60px;
+	height:      60px;
+	line-height: 60px; /* If you want to place numbers */
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       30px;
+	height:      30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+}
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+/* More slides? Add here more rules */
+
+
+/* YOU'RE THE DESIGNER!
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal{
+	color: #fff;
+	text-align: center;
+}
+.CSSgal .slider h2 {
+	margin-top: 40vh;
+	font-weight: 200;
+	font-size: 3em;
+}
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 5px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
+
+
+
+
+
+/* - EVENTOS PÁGINA PRINCIPAL - */
+
+.eventoinicial{
+  grid-area: eventoinicial;
+  margin-bottom: 90px;
+  display: grid;
+  grid-template-areas: "titulo titulo titulo"
+                       "none none none";
+  grid-template-rows: 80px auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+}
+
+.eventoinicial .título{
+  grid-area: titulo;
+  font-size: 32px;
+}
+
+.eventoinicial .caixaevento{
+  background: aqua;
+}
+
+
+
+
+/* - CAIXA EVENTO - */
+
+.caixaevento{
+  display: grid;
+  grid-template-areas: "fotoevento"
+                       "infoevento";
+  grid-template-columns: auto
+  grid-template-rows: 180px 45px;
+  grid-row-gap: 0;
+  width: auto;
+  margin: 0;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+}
+
+.fotoevento{
+  grid-area: fotoevento;
+  width: 100%;
+}
+
+
+.nomeevento{
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: end;
+  padding: 4px 20px;
+  z-index: 5;
+  color: white;
+  font-size: 28px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.infoevento{
+  grid-area: infoevento;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  height: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 14px;
+  box-sizing: border-box;
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  background: #f2f2f2;
+  color: #1a1a1a;
+  border-radius: 0 0 25px 25px;
+}
+
+.caixaevento .foto{
+  width: 371px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+
+.caixaevento .icone{
+  height: 11px;
+}
+
+
+
+
+
+/*-CONTEUDO PRINCIPAL DE CADA PÁGINA - */
+
+.conteudo{
+  grid-area: conteudo;
+  height: auto;
+  margin-bottom: 90px;
+  margin-top: 90px;
+}
+
+.conteudo h1{
+  margin-top: 0;
+  font-size: 50px;
+}
+
+
+#imagemhistoria{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+#legenda{
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+}
+
+
+
+
+
+/* - BARRA LATERAL DE NAVEGAÇÃO - */
+
+.sidebar{
+  background: #0d0d0d; /*cor da barra lateral*/
+  grid-area: sidebar;
+  height: 200px;
+  margin-bottom: 90px;
+  margin-top: 90px;
+  padding: 20px;
+  border-radius: 25px 25px 25px 25px;
+  position: sticky;
+  top: 60px;
+  left: 0;
+  box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sidebar p, .sidebar a, .sidebar a:visited, .sidebar h2{
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar h2{
+  margin-top: 0;
+  padding-bottom: 8px;
+  border-bottom: 4px solid white;
+}
+
+.sidebar p{
+  padding-left: 20px;
+}
+
+.sidebar a:hover{
+  color: #4CAF50;
+  font-weight: bolder;
+}
+
+
+
+
+
+/* - FOOTER - */
+
+footer{
+  background: #0d0d0d;
+  grid-area: footer;
+  height: 290px;
+}
+
+.sugestoes{
+  grid-area: 5 / 2 / 6 / 3;
+  z-index: 50;
+  justify-self: center;
+  text-align: center;
+  padding-top: 45px;
+  color: #ffffff;
+}
+
+.sugestoes p{
+  margin: 0.6em;
+}
+
+#email{
+  color: #4CAF50
+}
+
+.novidades{
+  grid-area: 5 / 3 / 6 / 4;
+  z-index: 50;
+  justify-self: center;
+  text-align: center;
+  padding-top: 45px;
+  color: #ffffff;
+}
+
+.novidades input{
+  outline: 0;
+  background: #f2f2f2;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  width: 85%;
+}
+
+.novidades button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  border: 0;
+  padding: 8px 16px;
+  color: #FFFFFF;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.novidades button:hover {
+  background: #3e8e41;
+}
+
+.parceiros{
+  grid-area: 5 / 4 / 6 / 5;
+  z-index: 50;
+  justify-self: center;
+  text-align: center;
+  padding-top: 45px;
+  color: #ffffff;
+}
+
+.parceiros h5{
+  margin-top: 1.4em;
+  margin-bottom: 0.7em;
+  padding: 0;
+  font-weight: 400;
+}
+
+#icone_parceiro{
+  height: 28px;
+  border-radius: 100px;
+  margin: 0 3.5px;
+}
