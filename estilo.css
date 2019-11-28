@@ -296,25 +296,22 @@ ul.navigation-sub-menu li a:link, .navigation-sub-menu li a:visited {
 /* More slides? Add here more rules */
 
 
-/* YOU'RE THE DESIGNER!
-   ____________________
-   All above was mainly to get it working :)
-   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
 
-.CSSgal{
-	color: #fff;
-	text-align: center;
-}
-.CSSgal .slider h2 {
-	margin-top: 40vh;
-	font-weight: 200;
-	font-size: 3em;
-}
+
+
 .CSSgal a {
 	border-radius: 50%;
 	margin: 0 5px;
 	color: rgba(0,0,0,0.8);
 	text-decoration: none;
+}
+
+
+
+/*- IMAGENS DOS SLIDES - */
+
+#imagemslide{
+  width: 100%;
 }
 
 
@@ -341,8 +338,12 @@ ul.navigation-sub-menu li a:link, .navigation-sub-menu li a:visited {
 }
 
 .eventoinicial .caixaevento{
-  background: aqua;
+  background: rgba(0 0 0 0);
 }
+
+
+
+
 
 
 
@@ -353,8 +354,7 @@ ul.navigation-sub-menu li a:link, .navigation-sub-menu li a:visited {
   display: grid;
   grid-template-areas: "fotoevento"
                        "infoevento";
-  grid-template-columns: auto
-  grid-template-rows: 180px 45px;
+  grid-template-columns: auto;
   grid-row-gap: 0;
   width: auto;
   margin: 0;
@@ -439,7 +439,37 @@ ul.navigation-sub-menu li a:link, .navigation-sub-menu li a:visited {
   text-align: center;
 }
 
+#mockupmapa{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: 25px 25px 25px 25px;
+  border: solid #0d0d0d;
+}
 
+
+/* - GALERIA PROVISÓRIA - */
+
+.conteudo table{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conteudo td{
+  padding: 16px;
+}
+
+.conteudo tr img{
+  width: 144px;
+  height: 144px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 10px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+}
 
 
 
